@@ -132,13 +132,13 @@ Note if "N" is less than 2, the program returns 0 as max prime.
                     fetch("prime.wasm"),
                     importObject
                 ).then((module) => {
-                    startTime = new Date().getTime();
+                    startTime = performance.now();
                     maxPrime = module.instance.exports.prime(num);
-                    endTime = new Date().getTime();
+                    endTime = performance.now();
                 });
 
                 primNode.textContent = maxPrime;
-                timeNode.textContent = endTime - startTime;
+                timeNode.textContent = (endTime - startTime).toFixed(2);
             }
 
             var buttons = document.getElementsByClassName("runButton");

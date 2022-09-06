@@ -20,12 +20,12 @@
                 var maxPrime;
                 var startTime, endTime;
 
-                startTime = new Date().getTime();
+                startTime = performance.now();
                 maxPrime = prime(num);
-                endTime = new Date().getTime();
+                endTime = performance.now();
 
                 primNode.textContent = maxPrime;
-                timeNode.textContent = endTime - startTime;
+                timeNode.textContent = (endTime - startTime).toFixed(2);
             }
 
             var buttons = document.getElementsByClassName("runButton");

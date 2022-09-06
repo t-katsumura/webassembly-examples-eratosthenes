@@ -1,0 +1,12 @@
+{
+  "name": "prime",
+  "version": "0.1.0",
+  "files": [
+    "prime_bg.wasm",
+    "prime.js",
+    "prime.d.ts"
+  ],
+  "module": "prime.js",
+  "types": "prime.d.ts",
+  "sideEffects": false
+}

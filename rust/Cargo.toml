@@ -3,9 +3,9 @@ edition = "2021"
 name = "prime"
 version = "0.1.0"
 
-#[[bin]]
-#name = "main"
-#path = "src/lib.rs"
+[[bin]]
+name = "prime"
+path = "src/lib.rs"
 
 [lib]
 crate-type = ["cdylib"]

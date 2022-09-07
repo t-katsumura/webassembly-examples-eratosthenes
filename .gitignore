@@ -1,3 +1,7 @@
 *.exe
 
+assemblyscript/node_modules
+
+typescript/node_modules
+
 rust/target

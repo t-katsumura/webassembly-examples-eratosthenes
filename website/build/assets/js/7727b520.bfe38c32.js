@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[910],{3539:e=>{e.exports=JSON.parse('{"title":"C++","slug":"/category/c-1","permalink":"/category/c-1","navigation":{"previous":{"title":"Run WASM","permalink":"/c/run-wasm"},"next":{"title":"Write Program","permalink":"/cpp/write-program"}}}')}}]);

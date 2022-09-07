@@ -1,6 +1,3 @@
 *.exe
 
 rust/target
-
-website
-website/node_modules

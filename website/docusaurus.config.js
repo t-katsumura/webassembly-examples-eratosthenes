@@ -10,9 +10,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "WebAssembly Examples Eratosthenes",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  tagline: "",
+  url: "https://t-katsumura.github.io",
+  baseUrl: "/webassembly-examples-eratosthenes/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -41,7 +41,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/website/docs",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

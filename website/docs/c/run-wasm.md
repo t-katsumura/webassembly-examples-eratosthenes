@@ -5,4 +5,4 @@ title: Run WASM
 
 ### See [Run WebAssembly](/run-webassembly)
 
-### Demo is available at [C WASM](pathname:///demos/c/)
+### Demo is available at [C WASM](pathname:///webassembly-examples-eratosthenes/demos/c/)

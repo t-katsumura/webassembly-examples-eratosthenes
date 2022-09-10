@@ -1,5 +1,5 @@
 // build with command
-// $ gcc src/main.c src/prime.c -o main
+// $ gcc src/main.c src/prime.c -O3 -o main
 
 #include <stdio.h>
 #include <stdlib.h>

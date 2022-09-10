@@ -1,6 +1,6 @@
 // build for browser
 // wasm-pack build --release --out-name prime --target web
-// build for standalone
+// build for standalone (comment out the #[wasm_bindgen])
 // cargo build --release --target wasm32-unknown-unknown
 
 use num::integer;

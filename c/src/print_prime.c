@@ -1,5 +1,5 @@
 // build for standalone
-// $ emcc src/print_prime.c src/prime.c -o print_prime-standalone.wasm -O3 -flto -sWASM=1 -sEXPORTED_FUNCTIONS=_prime,_print_prime -sSTANDALONE_WASM=1 --no-entry
+// $ emcc src/print_prime.c src/prime.c -o print_prime_standalone.wasm -O3 -flto -sWASM=1 -sEXPORTED_FUNCTIONS=_prime,_print_prime -sSTANDALONE_WASM=1 --no-entry
 
 #include <stdio.h>
 #include "prime.h"

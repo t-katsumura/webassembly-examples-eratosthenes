@@ -1,7 +1,7 @@
 // build for browsers
 // $ em++ src/prime.cpp -o prime.js -O3 -flto -sWASM=1 -sEXIT_RUNTIME=1 -sINVOKE_RUN=0 -sEXPORTED_FUNCTIONS=_prime,_malloc -sINITIAL_MEMORY=32mb -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1
 // build for standalone
-// $ em++ src/prime.cpp -o prime-standalone.wasm -O3 -flto -sWASM=1 -sEXPORTED_FUNCTIONS=_prime -sSTANDALONE_WASM=1 --no-entry
+// $ em++ src/prime.cpp -o prime_standalone.wasm -O3 -flto -sWASM=1 -sEXPORTED_FUNCTIONS=_prime -sSTANDALONE_WASM=1 --no-entry
 
 #include <cmath>
 #include <vector>

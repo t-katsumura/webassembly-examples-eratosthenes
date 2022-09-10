@@ -2,7 +2,7 @@
 // run this script with command
 // $ deno run --allow-read deno.ts -- 10000
 
-const wasmCode = await Deno.readFile("./prime-standalone.wasm");
+const wasmCode = await Deno.readFile("./prime_standalone.wasm");
 const wasmModule = new WebAssembly.Module(wasmCode);
 const wasmInstance = new WebAssembly.Instance(wasmModule);
 const prime = wasmInstance.exports.prime as CallableFunction;

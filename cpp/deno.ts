@@ -10,7 +10,7 @@ const context = new Context({
     // env: Deno.env.toObject(),   // this requires "--allow-env" flag in deno command
 });
 
-const wasmCode = await Deno.readFile("./prime-standalone.wasm");
+const wasmCode = await Deno.readFile("./prime_standalone.wasm");
 const wasmModule = new WebAssembly.Module(wasmCode);
 const wasmInstance = new WebAssembly.Instance(wasmModule, {
     wasi_snapshot_preview1: context.exports,

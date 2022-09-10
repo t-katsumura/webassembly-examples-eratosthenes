@@ -3,5 +3,5 @@
 assemblyscript/node_modules
 typescript/node_modules
 grain/node_modules
-
+grain/target
 rust/target

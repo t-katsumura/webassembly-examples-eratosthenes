@@ -4,11 +4,13 @@ name = "prime"
 version = "0.1.0"
 
 [[bin]]
-name = "prime"
-path = "src/lib.rs"
+name = "main"
+path = "src/main.rs"
 
 [lib]
 crate-type = ["cdylib"]
+name = "prime_standalone"
+path = "src/prime.rs"
 
 [dependencies]
 num = "0.4.0"

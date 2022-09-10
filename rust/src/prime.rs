@@ -4,8 +4,6 @@
 // cargo build --release --target wasm32-unknown-unknown
 
 use num::integer;
-use std::env;
-use std::time::Instant;
 use wasm_bindgen::prelude::*;
 
 #[no_mangle]
@@ -58,35 +56,4 @@ pub fn prime(n: usize) -> usize {
     }
 
     return max_value;
-}
-
-#[no_mangle]
-#[wasm_bindgen]
-pub fn main() {
-    let args: Vec<String> = env::args().collect();
-    if args.len() < 2 {
-        println!("no arguments found");
-        return;
-    }
-
-    let n: usize = args[1].parse().unwrap();
-    if args.len() < 2 {
-        println!("given number = {:?}", n);
-    }
-
-    // get start time
-    let start = Instant::now();
-
-    // calculate prime
-    let max_prime = prime(n);
-
-    // get end time
-    let end = start.elapsed();
-
-    println!("given number = {:?}", max_prime);
-    println!("max prime = {:?}", max_prime);
-    println!(
-        "duration [ns] = {:?}",
-        1000_000_000 * end.as_secs() + (end.subsec_nanos() as u64)
-    );
 }

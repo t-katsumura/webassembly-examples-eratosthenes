@@ -1,0 +1,24 @@
+{
+  "entries": ["./assembly/prime.ts"],
+  "targets": {
+    "debug": {
+      "outFile": "build/debug.wasm",
+      "textFile": "build/debug.wat",
+      "sourceMap": true,
+      "debug": true
+    },
+    "release": {
+      "outFile": "build/prime.wasm",
+      "textFile": "build/prime.wat",
+      "sourceMap": true,
+      "optimize": "speed",
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    }
+  },
+  "options": {
+    "bindings": "esm"
+  }
+}

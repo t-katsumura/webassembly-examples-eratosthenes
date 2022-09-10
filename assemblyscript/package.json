@@ -1,0 +1,25 @@
+{
+  "name": "prime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prime.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc assembly/prime.ts --target debug",
+    "asbuild:release": "asc assembly/prime.ts --target release -Ospeed",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "assemblyscript": "^0.21.3"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/prime.js",
+      "types": "./build/prime.d.ts"
+    }
+  }
+}

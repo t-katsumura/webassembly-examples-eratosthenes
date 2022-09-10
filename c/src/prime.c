@@ -5,6 +5,7 @@
 
 #include <math.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 int prime(int n)
 {
@@ -27,11 +28,11 @@ int prime(int n)
 
     // sieve array correspond to [3, 5, 7, 9, ..., ]
     // here, 0 = false, 1 = true
-    int *arr;
-    arr = (int *)malloc(N * sizeof(int));
+    bool *arr;
+    arr = (bool *)malloc(N * sizeof(bool));
     for (int i = 0; i < N; i++)
     {
-        arr[i] = 1;
+        arr[i] = true;
     }
 
     int x = 0;
@@ -56,7 +57,7 @@ int prime(int n)
             y = 2 * (j + 1) + 1;
             if (y % x == 0)
             {
-                arr[j] = 0;
+                arr[j] = false;
             }
         }
     }

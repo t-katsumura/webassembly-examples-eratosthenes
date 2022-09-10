@@ -24,5 +24,6 @@ To compare WebAssembly and JavaScript, there are also demos of JavaScript and Ty
 - [C++](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/cpp/)
 - [Go](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/go/)
 - [Rust](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/rust/)
+- [AssemblyScript](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/assemblyscript/)
 - [TypeScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/typescript/)
 - [Raw JavaScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/raw-javascript/)

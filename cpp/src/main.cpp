@@ -1,5 +1,5 @@
 // build with command
-// $ g++ src/main.cpp src/prime.cpp -o main
+// $ g++ src/main.cpp src/prime.cpp -O3 -o main
 
 #include <iostream>
 #include <chrono>

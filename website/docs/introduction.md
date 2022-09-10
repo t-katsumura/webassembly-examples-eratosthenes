@@ -5,57 +5,48 @@ slug: /
 
 # Introduction
 
-This repository shows some examples of [WebAssembly](https://webassembly.org/) application in languages.
+This repository shows some examples of [WebAssembly](https://webassembly.org/) application in languages.  
 Sample programs calculate the maximum prime below "N" given as an argument. Those programs implement the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) which has very simple algorithm.
 
 ## Languages
 
 **WebAssembly Available**
 
-- [C](/category/c)
-- [C++](/category/c-1)
-- [Go](/category/go)
-- [JavaScript](/category/javascript)
-- [Rust](/category/rust)
-
-**WebAssembly Unavailable**
-
-- Python
+-   [C](/category/c)
+-   [C++](/category/c-1)
+-   [Go](/category/go)
+-   [Rust](/category/rust)
+-   [JavaScript](/category/javascript)
+-   [AssemblyScript](/category/assemblyscript)
 
 **Future work**
 
-- C#
-- Elixier
-- Java
-- Julia
-- Ruby
+-   Elixier
+-   Java
+-   Julia
+-   Motoko
 
+**WebAssembly Unavailable**
+
+These languages cannot be compiled into WebAssembly.  
+But amazingly, there are some projects compiling interpreters or runtime to WebAssembly !
+
+-   Python
+-   Perl
+-   Ruby
+-   PHP
+-   C# .NET
 
 To compare with raw JavaScript with other languages, [Raw JavaScript](/run-raw-javascript) is also in the samples.
 
-## Comparison with Raw JavaScript
+# Demos
 
-Get started by **creating a new site**.
+Demos are available for
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
-
-## Useful References
-
-## Help Wanted
-
-Improving program or adding new languages are appreciated :)
+-   [C](pathname:///webassembly-examples-eratosthenes/demos/c/)
+-   [C++](pathname:///webassembly-examples-eratosthenes/demos/cpp/)
+-   [Go](pathname:///webassembly-examples-eratosthenes/demos/go/)
+-   [Rust](pathname:///webassembly-examples-eratosthenes/demos/rust/)
+-   [AssemblyScript](pathname:///webassembly-examples-eratosthenes/demos/assemblyscript/)
+-   [TypeScript](pathname:///webassembly-examples-eratosthenes/demos/typescript/) (Not WASM)
+-   [Raw JavaScript](pathname:///webassembly-examples-eratosthenes/demos/raw-javascript/) (Not WASM)

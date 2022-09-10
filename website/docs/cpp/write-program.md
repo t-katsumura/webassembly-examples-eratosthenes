@@ -6,40 +6,30 @@ sidebar_position: 1
 
 ## Write
 
-C++ program becomes like this.
+In C++, the Sieve of Eratosthenes can be written as
 
 ```cpp reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/cpp/prime.cpp#L11-L75
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/cpp/src/prime.cpp
 ```
+`extern "C"` is required.
 
 ## Build for Test
 
-Build C++ program to executable file `prime.exe`.  
-`g++` is used here to build.
+Build C++ program to executable file `main.exe`.  
+`g++` is used here.
 
-Uncomment `main()` function in the program before build.
-
-```cpp reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/cpp/prime.cpp#L80-L107
-```
-
-Then build the program.  
-These commands generate `prime.exe`.
-
-```bash title="build without optimization"
-g++ prime.cpp -o prime.exe
-```
-
-```bash title="build with optimization"
-g++ -O3 prime.cpp -o prime.exe
+```bash title="build with optimization level -O3"
+g++ src/main.cpp src/prime.cpp -O3 -o main
 ```
 
 g++ command line arguments can be found at [3 GCC Command Options](https://gcc.gnu.org/onlinedocs/gcc/Invoking-GCC.html#Invoking-GCC).
 
 ## Run and Test
 
-```bash title="invoke prime function"
-prime.exe 100000
+Now, lets's run `main.exe` and test the function.
+
+```bash title="invoke main function"
+main.exe 100000
 ```
 
 ```bash title="output"

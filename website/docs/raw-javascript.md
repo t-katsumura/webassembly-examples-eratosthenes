@@ -8,7 +8,6 @@ slug: /run-raw-javascript
 
 Raw JavaScript implementation of Sieve of Eratosthenes is contained in this repository to comapre the raw JavaScript and WebAssembly.
 
-
 ## Write Program
 
 JavaScript program will be like this.
@@ -17,14 +16,13 @@ JavaScript program will be like this.
 https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/raw-javascript/prime.js
 ```
 
-
 ## Run on Browser
 
 Now, let's run raw JavaScript on browser.  
 First, confirm that these files are exist in the working directory.
 
-- **index.html** : sample html calling prime.wasm
-- **prime.js** : glue javascript program
+-   **index.html** : sample html calling prime.wasm
+-   **prime.js** : glue javascript program
 
 Second, run a http server.  
 Just opening the index.html may not work because of the CORS policy of the browsers.

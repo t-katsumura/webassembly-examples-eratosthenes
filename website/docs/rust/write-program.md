@@ -6,31 +6,29 @@ sidebar_position: 1
 
 ## Write
 
-Rust program becomes like this.
+In Rust, the Sieve of Eratosthenes can be written as
 
 ```rust reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/rust/src/lib.rs#L13-L61
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/rust/src/prime.rs
 ```
 
 ## Build for Test
 
-Build Rust program to executable file `prime.exe`.  
-`cargo` is used here to build.  
-This command generates `prime.exe`.
+Build the program with `cargo`.   
+This command generates `target/release/main.exe`.
 
-```bash title="build"
+```bash title="build with cargo"
 cargo build --release
 ```
 
 ## Run and Test
 
-Run executable file with argument like
+Now, run executable file with an argument like
 
-```bash title="invoke prime function"
-prime.exe 10000
+```bash title="invoke main function"
+cd target/release/
+main.exe 10000
 ```
-
-It outputs
 
 ```bash title="output"
 given number = 9973
@@ -40,11 +38,7 @@ duration [ns] = 1291000
 
 Or, `cargo` command can directly invoke the program and results in same output.
 
-```bash title="directly invoke prime function"
-cargo run 10000
-
-or
-
+```bash title="directly invoke main function"
 cargo run --release 10000
 ```
 

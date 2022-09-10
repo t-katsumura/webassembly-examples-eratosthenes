@@ -6,32 +6,19 @@ sidebar_position: 1
 
 ## Write
 
-C program becomes like this.
+In C, the Sieve of Eratosthenes can be written as
 
 ```c reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/c/prime.c#L13-L79
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/c/src/prime.c
 ```
 
 ## Build for Test
 
-Build C program to executable file `prime.exe`.  
+Build C program to executable file `main.exe`.  
 `gcc` is used here to build.
 
-Uncomment `main()` function in the program before build.
-
-```c reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/c/prime.c#L84-L119
-```
-
-Then build the program.  
-These commands generate `prime.exe`.
-
-```bash title="build without optimization"
-gcc prime.c -o prime.exe
-```
-
-```bash title="build with optimization"
-gcc -O3 prime.c -o prime.exe
+```bash title="build with optimization level O3"
+gcc src/main.c src/prime.c -O3 -o main
 ```
 
 gcc command line arguments can be found at [3 GCC Command Options](https://gcc.gnu.org/onlinedocs/gcc/Invoking-GCC.html#Invoking-GCC).
@@ -39,7 +26,7 @@ gcc command line arguments can be found at [3 GCC Command Options](https://gcc.g
 ## Run and Test
 
 ```bash title="invoke prime function"
-prime.exe 100000
+main.exe 100000
 ```
 
 ```bash title="output"

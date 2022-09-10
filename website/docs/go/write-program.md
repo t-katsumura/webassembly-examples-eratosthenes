@@ -6,39 +6,30 @@ sidebar_position: 1
 
 ## Write
 
-Go program becomes like this.
+In Go, the Sieve of Eratosthenes can be written as
 
 ```go reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/4a867b918e191abd059d9a31addabfe7db02875c/go/prime.go#L22-L72
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/pkg/prime.go#L12-L62
 ```
 
 ## Build for Test
 
-Build Go program to executable file `prime.exe`.  
+Build Go program to executable file.
+This commands generate `main.exe`.
 
-Uncomment `main()` function in the program before build.
-
-```go reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/4a867b918e191abd059d9a31addabfe7db02875c/go/prime.go#L99-L119
+```bash title="build with go"
+go build -tags=release -ldflags="-s -w" src/main.go src/prime.go
 ```
 
-Then build the program.  
-These commands generate `prime.exe`.
-
-```bash title="build without optimization"
-go build prime.go
-```
-
-```bash title="build with optimization"
-go build -tags=release -ldflags="-s -w" prime.go
-```
-
+Here, `-tags=release` and `-ldflags` are for optimizing.  
 Go command line arguments can be found at [here](https://pkg.go.dev/cmd/go).
 
 ## Run and Test
 
-```bash title="invoke prime function"
-prime.exe 100000
+now, run the executable file.
+
+```bash title="invoke main function"
+main.exe 100000
 ```
 
 ```bash title="output"
@@ -47,15 +38,10 @@ max prime = 99991
 duration [ns] = 63042700
 ```
 
-
 Or, `go` command can directly invoke the program and results in same output.
 
-```bash title="directly invoke prime function"
-go run prime.go 100000
-
-or
-
-go run -tags=release -ldflags="-s -w" prime.go 100000
+```bash title="directly invoke main function"
+go run -tags=release -ldflags="-s -w" src/main.go src/prime.go 100000
 ```
 
 The following table shows the calculated prime for given "N".

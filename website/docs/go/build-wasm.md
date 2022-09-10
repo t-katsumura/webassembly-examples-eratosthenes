@@ -6,15 +6,13 @@ sidebar_position: 2
 
 ## Build for Browsers
 
-## with go
+### with go
 
-Build webassembly from prime.go using go command.
+Build WebAssembly using go command.  
+Following two files are used in this section.
 
-Before build, `main()` function and `getPrime()` wrapper function have to be uncommented.
-
-```go reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/prime.go#L75-L87
-```
+-   **prime.go**
+-   **main_go.go**
 
 Set the environmental variables for targeting.
 
@@ -28,16 +26,10 @@ GOOS=js
 GOARCH=wasm
 ```
 
-This is the minimal command to build.
+Build WebAssembly with command
 
-```bash title="minimal build command"
-go build -o prime.wasm
-```
-
-Build with optimize options.
-
-```bash title="build with optimize options"
-go build -o prime.wasm -tags=release -ldflags="-s -w"
+```bash title="build for browsers with go"
+go build -o prime.wasm -tags=release -ldflags="-s -w" src/main_go.go src/prime.go
 ```
 
 These command generate `prime.wasm`.  
@@ -49,27 +41,27 @@ select `wasm_exec_go.js` in index.html before running on browser
 :::
 
 ```html reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/index.html#L108
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/index.html#L109-L110
 ```
 
-## with tinygo
+### with tinygo
 
-Before build, `main()` function have to be uncommented.
+Build WebAssembly using tinygo.  
+Following two files are used in this section.
+
+-   **prime.go**
+-   **main_tinygo.go**
+
+Before build, we need to uncomment `main()` function for build.
 
 ```go reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/prime.go#L92-L94
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/pkg/prime.go#L74-L78
 ```
 
-Then, build with
+Let's build WebAssembly with this command.  
 
-```bash title="minimal build command"
-tinygo build -wasm-abi=generic -target=wasm -o prime.wasm prime.go
-```
-
-Build with optimize options.
-
-```bash title="build with optimize options"
-tinygo build -opt=2 -wasm-abi=generic -target=wasm -tags=release -o prime.wasm prime.go
+```bash title="build for browsers with tinygo"
+tinygo build -opt=2 -wasm-abi=generic -target=wasm -tags=release -o prime.wasm src/prime.go
 ```
 
 These command generate `prime.wasm`.  
@@ -81,10 +73,12 @@ select `wasm_exec_tinygo.js` in index.html before running on browser
 :::
 
 ```html reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/index.html#L109
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/index.html#L109-L110
 ```
 
 ## Build for Standalone
+
+### tinygo
 
 Buildgin go program to standalone wasm is not currently supported by go command.  
 So, `tinygo` is used here.
@@ -93,7 +87,7 @@ Make sure [tinygo](https://tinygo.org/) is installed. Binaries can be downloaded
 Before build, `main()` function have to be uncommented.
 
 ```go reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/prime.go#L92-L94
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/pkg/prime.go#L74-L78
 ```
 
 ```bash title="build with minimal"
@@ -104,8 +98,4 @@ tinygo build -wasm-abi=generic -target=wasi -o prime.wasm prime.go
 tinygo build -opt=2 -wasm-abi=generic -target=wasi -tags=release -o prime.wasm prime.go
 ```
 
-Those commands generate `prime.wasm`.  
-
-:::caution
-This wasm works on wasmtime or wasm3 and does not work on wasmer
-:::
+Those commands generate `prime.wasm`.

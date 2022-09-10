@@ -20,9 +20,9 @@ How to compile or how to run the samples are briefly described there.
 Demos are available for these languages.  
 To compare WebAssembly and JavaScript, there are also demos of JavaScript and TypeScript (transpiled to JavaScript)
 
-- [C](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/c/)
-- [C++](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/cpp/)
-- [Go](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/go/)
-- [Rust](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/rust/)
-- [TypeScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/typescript/)
-- [Raw JavaScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/raw-javascript/)
+- [C](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/c/){:target="_blank" rel="noopener"}
+- [C++](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/cpp/){:target="_blank" rel="noopener"}
+- [Go](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/go/){:target="_blank" rel="noopener"}
+- [Rust](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/rust/){:target="_blank" rel="noopener"}
+- [TypeScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/typescript/){:target="_blank" rel="noopener"}
+- [Raw JavaScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/raw-javascript/){:target="_blank" rel="noopener"}

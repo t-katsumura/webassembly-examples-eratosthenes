@@ -108,15 +108,17 @@ Note if "N" is less than 2, the program returns 0 as max prime.
     <script type="module">
         import init, { prime } from "./pkg/prime.js";
         export async function calculatePrime() {
-            var row = this.parentNode.parentNode;
-            var num = row.getElementsByClassName("number")[0].value;
-            var primNode = row.getElementsByClassName("prime")[0];
-            var timeNode = row.getElementsByClassName("time")[0];
+            let row = this.parentNode.parentNode;
+            let num = row.getElementsByClassName("number")[0].value;
+            let primNode = row.getElementsByClassName("prime")[0];
+            let timeNode = row.getElementsByClassName("time")[0];
             primNode.textContent = "";
             timeNode.textContent = "";
 
-            var maxPrime;
-            var startTime, endTime;
+            let maxPrime;
+            let startTime;
+            let endTime;
+
             await init().then(() => {
                 startTime = performance.now();
                 maxPrime = prime(num);
@@ -127,8 +129,8 @@ Note if "N" is less than 2, the program returns 0 as max prime.
             timeNode.textContent = (endTime - startTime).toFixed(2);
         }
 
-        var buttons = document.getElementsByClassName("runButton");
-        for (var i = 0; i < buttons.length; i++) {
+        let buttons = document.getElementsByClassName("runButton");
+        for (let i = 0; i < buttons.length; i++) {
             buttons.item(i).addEventListener("click", calculatePrime);
         }
     </script>

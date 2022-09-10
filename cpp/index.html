@@ -1,134 +1,138 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="utf-8" />
-        <title>C++ WASM</title>
-    </head>
 
-    <body style="text-align: center; margin-left: auto; margin-right: auto">
-        <h1>Calculate Max Prime in C++</h1>
-        <pre>
+<head>
+    <meta charset="utf-8" />
+    <title>C WASM</title>
+</head>
+
+<body style="text-align: center; margin-left: auto; margin-right: auto">
+    <h1>Calculate Max Prime in C++</h1>
+    <pre>
 Calculate max prime below "N" using the method of Sieve of Eratosthenes.
 Push "Run", then the table shows the max prime below "N" and the calculation time.
 Note if "N" is less than 2, the program returns 0 as max prime.
-        </pre>
-        <table border="1" align="center">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>N</th>
-                    <th>max prime</th>
-                    <th>time [ms]</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><input type="number" class="number" value="1" /></td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><input type="number" class="number" value="2" /></td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><input type="number" class="number" value="3" /></td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><input type="number" class="number" value="10" /></td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><input type="number" class="number" value="100" /></td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><input type="number" class="number" value="1000" /></td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>
-                        <input type="number" class="number" value="10000" />
-                    </td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>
-                        <input type="number" class="number" value="100000" />
-                    </td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>
-                        <input type="number" class="number" value="1000000" />
-                    </td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>
-                        <input type="number" class="number" value="10000000" />
-                    </td>
-                    <td class="prime"></td>
-                    <td class="time"></td>
-                    <td><button class="runButton">Run</button></td>
-                </tr>
-            </tbody>
-        </table>
+    </pre>
+    <table border="1" align="center">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>N</th>
+                <th>max prime</th>
+                <th>time [ms]</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="number" class="number" value="1" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="number" class="number" value="2" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="number" class="number" value="3" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><input type="number" class="number" value="10" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><input type="number" class="number" value="100" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><input type="number" class="number" value="1000" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>
+                    <input type="number" class="number" value="10000" />
+                </td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>
+                    <input type="number" class="number" value="100000" />
+                </td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>
+                    <input type="number" class="number" value="1000000" />
+                </td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>
+                    <input type="number" class="number" value="10000000" />
+                </td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+        </tbody>
+    </table>
 
-        <script src="prime.js"></script>
-        <script type="text/javascript">
-            var importObject = {
-                wasi_snapshot_preview1: {
-                    fd_write: (arg) => console.log(arg),
-                },
-                env: {
-                    emscripten_resize_heap: (arg) => console.log(arg),
-                    abort: (arg) => {
-                        throw WebAssembly.RuntimeError("abort");
-                    },
-                },
-            };
+    <script src="prime.js"></script>
+    <script type="text/javascript">
+        // this object is not used on default
+        // this object is used in WebAssembly.instantiateStreaming() which is commented out below
+        var importObject = {
+            wasi_snapshot_preview1: {
+                fd_write: (arg) => console.log(arg),
+            },
+            env: {
+                emscripten_resize_heap: (arg) => _emscripten_resize_heap(arg),
+            },
+        };
 
-            async function calculatePrime() {
-                var row = this.parentNode.parentNode;
-                var num = row.getElementsByClassName("number")[0].valueAsNumber;
-                var primNode = row.getElementsByClassName("prime")[0];
-                var timeNode = row.getElementsByClassName("time")[0];
-                primNode.textContent = "";
-                timeNode.textContent = "";
+        async function calculatePrime() {
+            let row = this.parentNode.parentNode;
+            let num = row.getElementsByClassName("number")[0].valueAsNumber;
 
-                var maxPrime;
-                var startTime, endTime;
+            let primNode = row.getElementsByClassName("prime")[0];
+            let timeNode = row.getElementsByClassName("time")[0];
+            primNode.textContent = "";
+            timeNode.textContent = "";
 
+            let maxPrime;
+            let startTime;
+            let endTime;
+
+            /*
+                // this way is available only when wasm was compiled with less equal to "-O2" optimization level
                 await WebAssembly.instantiateStreaming(
                     fetch("prime.wasm"),
                     importObject
@@ -137,15 +141,23 @@ Note if "N" is less than 2, the program returns 0 as max prime.
                     maxPrime = module.instance.exports.prime(num);
                     endTime = performance.now();
                 });
+                */
 
-                primNode.textContent = maxPrime;
-                timeNode.textContent = (endTime - startTime).toFixed(2);
-            }
+            await Module().then((inst) => {
+                startTime = performance.now();
+                maxPrime = inst._prime(num);
+                endTime = performance.now();
+            });
 
-            var buttons = document.getElementsByClassName("runButton");
-            for (var i = 0; i < buttons.length; i++) {
-                buttons.item(i).addEventListener("click", calculatePrime);
-            }
-        </script>
-    </body>
+            primNode.textContent = maxPrime;
+            timeNode.textContent = (endTime - startTime).toFixed(2);
+        }
+
+        let buttons = document.getElementsByClassName("runButton");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons.item(i).addEventListener("click", calculatePrime);
+        }
+    </script>
+</body>
+
 </html>

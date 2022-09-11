@@ -1,7 +1,24 @@
 *.exe
 
+# assemblyscript
 assemblyscript/node_modules
-typescript/node_modules
+assemblyscript/build
+
+# c
+c/*.wasm
+
+# cpp
+cpp/*.wasm
+
+# go
+go/*.wasm
+
+# grain
 grain/node_modules
 grain/target
+
+# rust
 rust/target
+
+# typescript
+typescript/node_modules

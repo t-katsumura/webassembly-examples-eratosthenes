@@ -18,6 +18,7 @@ grain/node_modules
 grain/target
 
 # rust
+rust/pkg
 rust/target
 
 # typescript

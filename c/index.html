@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>C WASM</title>
+    <script type="text/javascript" src="../filesize.js"></script>
 </head>
 
 <body style="text-align: center; margin-left: auto; margin-right: auto">
@@ -12,6 +13,7 @@
 Calculate max prime below "N" using the method of Sieve of Eratosthenes.
 Push "Run", then the table shows the max prime below "N" and the calculation time.
 Note if "N" is less than 2, the program returns 0 as max prime.
+    <div id="filesize" style="font-weight: 1000;"></div>
     </pre>
     <table border="1" align="center">
         <thead>
@@ -111,7 +113,7 @@ Note if "N" is less than 2, the program returns 0 as max prime.
         // this object is used in WebAssembly.instantiateStreaming() which is commented out below
         var importObject = {
             wasi_snapshot_preview1: {
-                fd_write: (arg) => console.log(arg),
+                fd_write: (arg) => console.log(arg.body),
             },
             env: {
                 emscripten_resize_heap: (arg) => _emscripten_resize_heap(arg),
@@ -132,16 +134,16 @@ Note if "N" is less than 2, the program returns 0 as max prime.
             let endTime;
 
             /*
-                // this way is available only when wasm was compiled with less equal to "-O2" optimization level
-                await WebAssembly.instantiateStreaming(
-                    fetch("prime.wasm"),
-                    importObject
-                ).then((module) => {
-                    startTime = performance.now();
-                    maxPrime = module.instance.exports.prime(num);
-                    endTime = performance.now();
-                });
-                */
+            // this way is available only when wasm was compiled with less equal to "-O2" optimization level
+            await WebAssembly.instantiateStreaming(
+                fetch("prime.wasm"),
+                importObject
+            ).then((module) => {
+                startTime = performance.now();
+                maxPrime = module.instance.exports.prime(num);
+                endTime = performance.now();
+            });
+            */
 
             await Module().then((inst) => {
                 startTime = performance.now();

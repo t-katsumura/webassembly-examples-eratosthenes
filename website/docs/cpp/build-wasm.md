@@ -14,7 +14,11 @@ This command generate `prime.js` and `prime.wasm` files. We need both to run the
 Note this commands increasing initial wasm memory size to 32 MB.
 If the sample program is to consume memory larger than this size, it will be aborted.
 
-```bash title="build"
+```bash title="build for browsers"
+em++ src/prime.cpp -o prime.js -O3 -flto -sWASM=1 -sEXIT_RUNTIME=1 -sINVOKE_RUN=0 -sEXPORTED_FUNCTIONS=_prime -sMODULARIZE=1
+```
+
+```bash title="build for browsers with more options"
 em++ src/prime.cpp -o prime.js -O3 -flto -sWASM=1 -sEXIT_RUNTIME=1 -sINVOKE_RUN=0 -sEXPORTED_FUNCTIONS=_prime,_malloc -sINITIAL_MEMORY=32mb -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1
 ```
 
@@ -28,7 +32,7 @@ em++ src/prime.cpp -o prime.js -O3 -flto -sWASM=1 -sEXIT_RUNTIME=1 -sINVOKE_RUN=
 -   `-sMODULARIZE=1` : modularize javascript to enable reuse. if not set, module is initialize globally in the emitted javascript
 
 If optimization options is set to `-O3` or higher, function names will be broken. This is not the big problem when using the glue javascript code emmitted on compile.  
-Other important options like `-sEXPORTED_RUNTIME_METHODS=ccall,cwrap`, `-sINVOKE_RUN=1` or `-sALLOW_MEMORY_GROWTH=1` can be found at [Emscripten Compiler Frontend (emcc)](https://emscripten.org/docs/tools_reference/emcc.html).
+Other important options like `-sEXPORTED_RUNTIME_METHODS=ccall,cwrap` or `-sALLOW_MEMORY_GROWTH=1` can be found at [Emscripten Compiler Frontend (emcc)](https://emscripten.org/docs/tools_reference/emcc.html).
 
 ## Build for Standalone
 

@@ -1,6 +1,9 @@
+//go:build js && wasm
+// +build js,wasm
+
 // build for browsers. Use ${GOROOT}/misc/wasm/wasm_exec.js
 // "-ldflags" can be found by `go build -ldflags --help`
-// set environmental variables of `GOOS=js GOARCH=wasm`
+// NOTE: set environmental variables of `GOOS=js GOARCH=wasm`
 // $ go build -o prime.wasm -tags=release -ldflags="-s -w" src/main_go.go src/prime.go
 
 package main

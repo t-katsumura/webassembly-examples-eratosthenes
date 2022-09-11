@@ -84,7 +84,7 @@ More document on `wasm_bindgen` can be found at [The wasm-bindgen Guide](https:/
 
 ###  wasm32-unknown-unknown
 
-This command build standalone wasm for WASI and generates `prime.wasm` etc...  
+This command build standalone wasm for WASI and generates `prime_standalone.wasm` etc...  
 Then we can use .wasm standalone.
 
 ```bash title="build with targeting wasm3-unknown-unknown"
@@ -99,4 +99,4 @@ When targeting `wasm32-wasi`, it may requires [wasi crate](https://crates.io/cra
 cargo build --release --target wasm32-wasi
 ```
 
-This command generates `prime.wasm`.
+This command generates `prime_standalone.wasm`.

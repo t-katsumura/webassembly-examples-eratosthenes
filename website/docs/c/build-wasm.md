@@ -15,6 +15,10 @@ Note this commands increasing initial wasm memory size to 32 MB.
 If the sample program is to consume memory larger than this size, it would be aborted.
 
 ```bash title="build for browsers"
+emcc src/prime.c -o prime.js -O3 -flto -sWASM=1 -sEXIT_RUNTIME=1 -sINVOKE_RUN=0 -sEXPORTED_FUNCTIONS=_prime -sMODULARIZE=1
+```
+
+```bash title="build for browsers with more options"
 emcc prime.c -o prime.js -O3 -flto -sWASM=1 -sEXIT_RUNTIME=1 -sINVOKE_RUN=0 -sEXPORTED_FUNCTIONS=_prime,_malloc -sINITIAL_MEMORY=32mb -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE=1
 ```
 
@@ -39,7 +43,7 @@ We need to tell the commands what function should be exported so that we can cal
 The following command generates only `prime.wasm`.
 
 ```bash title="build for standalone"
-emcc prime.c -o prime.js -O3 -flto -sWASM=1 -sEXPORTED_FUNCTIONS=_prime -sSTANDALONE_WASM=1 --no-entry
+emcc prime.c -o prime_standalone.wasm -O3 -flto -sWASM=1 -sEXPORTED_FUNCTIONS=_prime -sSTANDALONE_WASM=1 --no-entry
 ```
 
 -   `--no-entry` : this is required when not setting `_main` in the `EXPORTED_FUNCTIONS` option

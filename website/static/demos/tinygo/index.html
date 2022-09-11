@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Go WASM</title>
+    <title>TinyGo WASM</title>
     <script type="text/javascript" src="../filesize.js"></script>
 </head>
 
 <body style="text-align: center; margin-left: auto; margin-right: auto">
-    <h1>Calculate Max Prime in Go</h1>
+    <h1>Calculate Max Prime in TinyGo</h1>
     <pre>
 Calculate max prime below "N" using the method of Sieve of Eratosthenes.
 Push "Run", then the table shows the max prime below "N" and the calculation time.
@@ -108,8 +108,8 @@ Note if "N" is less than 2, the program returns 0 as max prime.
     </table>
 
     <!-- select "wasm_exec_go.js" or "wasm_exec_tinygo.js" -->
-    <script src="wasm_exec_go.js"></script>
-    <!-- <script src="wasm_exec_tinygo.js"></script> -->
+    <!-- <script src="wasm_exec_go.js"></script> -->
+    <script src="wasm_exec_tinygo.js"></script>
 
     <script type="text/javascript">
         if (!WebAssembly.instantiateStreaming) {

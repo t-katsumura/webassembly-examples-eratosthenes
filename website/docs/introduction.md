@@ -21,9 +21,10 @@ Sample programs calculate the maximum prime below "N" given as an argument. Thos
 
 **Future work**
 
--   Elixier
+-   Elixir
 -   Java
 -   Julia
+-   Grain
 -   Motoko
 
 **WebAssembly Unavailable**
@@ -39,14 +40,24 @@ But amazingly, there are some projects compiling interpreters or runtime to WebA
 
 To compare with raw JavaScript with other languages, [Raw JavaScript](/run-raw-javascript) is also in the samples.
 
-# Demos
+## Demos
 
 Demos are available for
 
 -   [C](pathname:///webassembly-examples-eratosthenes/demos/c/)
 -   [C++](pathname:///webassembly-examples-eratosthenes/demos/cpp/)
--   [Go](pathname:///webassembly-examples-eratosthenes/demos/go/)
+-   [Go](pathname:///webassembly-examples-eratosthenes/demos/go/) (Compiled with Go)
+-   [Go](pathname:///webassembly-examples-eratosthenes/demos/tinygo/) (Compiled with TinyGo)
 -   [Rust](pathname:///webassembly-examples-eratosthenes/demos/rust/)
 -   [AssemblyScript](pathname:///webassembly-examples-eratosthenes/demos/assemblyscript/)
 -   [TypeScript](pathname:///webassembly-examples-eratosthenes/demos/typescript/) (Not WASM)
 -   [Raw JavaScript](pathname:///webassembly-examples-eratosthenes/demos/raw-javascript/) (Not WASM)
+
+## Reference Implementation
+
+Reference implementation of the algorithm of Sieve of Eratosthenes is written in python.  
+All other languages refers this code.
+
+```python reference
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/python/prime.py#L6-L42
+```

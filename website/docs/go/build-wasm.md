@@ -78,7 +78,7 @@ https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/in
 
 ## Build for Standalone
 
-### tinygo
+### with tinygo
 
 Buildgin go program to standalone wasm is not currently supported by go command.  
 So, `tinygo` is used here.
@@ -98,4 +98,4 @@ tinygo build -wasm-abi=generic -target=wasi -o prime.wasm prime.go
 tinygo build -opt=2 -wasm-abi=generic -target=wasi -tags=release -o prime.wasm prime.go
 ```
 
-Those commands generate `prime.wasm`.
+Those commands generate `prime_standalone.wasm`.

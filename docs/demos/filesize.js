@@ -17,7 +17,7 @@ fetch("prime.wasm", { method: "HEAD" })
             get_filesize("prime.wasm");
         }
     })
-    .catch((err) => { });
+    .catch((err) => { const mute = err; });
 
 // for assembly script
 fetch("build/prime.wasm", { method: "HEAD" })
@@ -26,7 +26,7 @@ fetch("build/prime.wasm", { method: "HEAD" })
             get_filesize("build/prime.wasm");
         }
     })
-    .catch((err) => { });
+    .catch((err) => { const mute = err; });
 
 // for rust
 fetch("pkg/prime_bg.wasm", { method: "HEAD" })
@@ -35,4 +35,4 @@ fetch("pkg/prime_bg.wasm", { method: "HEAD" })
             get_filesize("pkg/prime_bg.wasm");
         }
     })
-    .catch((err) => { });
+    .catch((err) => { const mute = err; });

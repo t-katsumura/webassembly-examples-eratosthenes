@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TinyGo WASM</title>
+    <script type="text/javascript" src="../filesize.js"></script>
+</head>
+
+<body style="text-align: center; margin-left: auto; margin-right: auto">
+    <h1>Calculate Max Prime in TinyGo</h1>
+    <pre>
+Calculate max prime below "N" using the method of Sieve of Eratosthenes.
+Push "Run", then the table shows the max prime below "N" and the calculation time.
+Note if "N" is less than 2, the program returns 0 as max prime.
+    <div id="filesize" style="font-weight: 1000;"></div>
+    </pre>
+    <table border="1" align="center">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>N</th>
+                <th>max prime</th>
+                <th>time [ms]</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="number" class="number" value="1" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="number" class="number" value="2" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="number" class="number" value="3" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><input type="number" class="number" value="10" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><input type="number" class="number" value="100" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><input type="number" class="number" value="1000" /></td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>
+                    <input type="number" class="number" value="10000" />
+                </td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>
+                    <input type="number" class="number" value="100000" />
+                </td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>
+                    <input type="number" class="number" value="1000000" />
+                </td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>
+                    <input type="number" class="number" value="10000000" />
+                </td>
+                <td class="prime"></td>
+                <td class="time"></td>
+                <td><button class="runButton">Run</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- select "wasm_exec_go.js" or "wasm_exec_tinygo.js" -->
+    <!-- <script src="wasm_exec_go.js"></script> -->
+    <script src="wasm_exec_tinygo.js"></script>
+
+    <script type="text/javascript">
+        if (!WebAssembly.instantiateStreaming) {
+            WebAssembly.instantiateStreaming = async (resp, importObject) => {
+                const source = await (await resp).arrayBuffer();
+                return await WebAssembly.instantiate(source, importObject);
+            };
+        }
+
+        const go = new Go();
+        let mod;
+        let inst;
+
+        WebAssembly.instantiateStreaming(fetch("prime.wasm"), go.importObject)
+            .then((result) => {
+                mod = result.module;
+                inst = result.instance;
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+
+        async function calculatePrime() {
+            let row = this.parentNode.parentNode;
+            let num = row.getElementsByClassName("number")[0].valueAsNumber;
+            let primNode = row.getElementsByClassName("prime")[0];
+            let timeNode = row.getElementsByClassName("time")[0];
+            primNode.textContent = "";
+            timeNode.textContent = "";
+
+            let maxPrime;
+            let startTime;
+            let endTime;
+
+            try {
+                // prime is not defined when built with tinygo
+                prime;
+            } catch (e) {
+                // re-define prime function when not available
+                // this is for the wasm built with tinygo
+                prime = inst.exports.prime;
+            }
+
+            go.run(inst);
+            startTime = performance.now();
+            maxPrime = prime(num);
+            endTime = performance.now();
+
+            // reset instance for the next time
+            inst = await WebAssembly.instantiate(mod, go.importObject);
+
+            primNode.textContent = maxPrime;
+            timeNode.textContent = (endTime - startTime).toFixed(2);
+        }
+
+        let buttons = document.getElementsByClassName("runButton");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons.item(i).addEventListener("click", calculatePrime);
+        }
+    </script>
+</body>
+
+</html>

@@ -11,28 +11,10 @@ function get_filesize(url) {
     xhr.send();
 }
 
-fetch("prime.wasm", { method: "HEAD" })
-    .then((resp) => {
-        if (resp.headers.get("Content-Type") == "application/wasm") {
-            get_filesize("prime.wasm");
-        }
-    })
-    .catch((err) => { const mute = err; });
-
-// for assembly script
-fetch("build/prime.wasm", { method: "HEAD" })
-    .then((resp) => {
-        if (resp.headers.get("Content-Type") == "application/wasm") {
-            get_filesize("build/prime.wasm");
-        }
-    })
-    .catch((err) => { const mute = err; });
-
-// for rust
-fetch("pkg/prime_bg.wasm", { method: "HEAD" })
-    .then((resp) => {
-        if (resp.headers.get("Content-Type") == "application/wasm") {
-            get_filesize("pkg/prime_bg.wasm");
-        }
-    })
-    .catch((err) => { const mute = err; });
+if (document.title.includes("AssemblyScript")) {
+    get_filesize("build/prime.wasm");
+} else if (document.title.includes("Rust")) {
+    get_filesize("pkg/prime_bg.wasm");
+} else {
+    get_filesize("prime.wasm");
+}

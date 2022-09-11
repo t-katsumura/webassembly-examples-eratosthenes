@@ -11,22 +11,28 @@ function get_filesize(url) {
     xhr.send();
 }
 
-fetch("prime.wasm", { method: "HEAD" }).then((resp) => {
-    if (resp.headers.get("Content-Type") == "application/wasm") {
-        get_filesize("prime.wasm");
-    }
-});
+fetch("prime.wasm", { method: "HEAD" })
+    .then((resp) => {
+        if (resp.headers.get("Content-Type") == "application/wasm") {
+            get_filesize("prime.wasm");
+        }
+    })
+    .catch((err) => { });
 
 // for assembly script
-fetch("build/prime.wasm", { method: "HEAD" }).then((resp) => {
-    if (resp.headers.get("Content-Type") == "application/wasm") {
-        get_filesize("build/prime.wasm");
-    }
-});
+fetch("build/prime.wasm", { method: "HEAD" })
+    .then((resp) => {
+        if (resp.headers.get("Content-Type") == "application/wasm") {
+            get_filesize("build/prime.wasm");
+        }
+    })
+    .catch((err) => { });
 
 // for rust
-fetch("pkg/prime_bg.wasm", { method: "HEAD" }).then((resp) => {
-    if (resp.headers.get("Content-Type") == "application/wasm") {
-        get_filesize("pkg/prime_bg.wasm");
-    }
-});
+fetch("pkg/prime_bg.wasm", { method: "HEAD" })
+    .then((resp) => {
+        if (resp.headers.get("Content-Type") == "application/wasm") {
+            get_filesize("pkg/prime_bg.wasm");
+        }
+    })
+    .catch((err) => { });

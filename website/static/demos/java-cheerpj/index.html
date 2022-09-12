@@ -113,7 +113,7 @@ Note if "N" is less than 2, the program returns 0 as max prime.
         let prime;
         async function init() {
             cheerpjInit();
-            cheerpjRunMain("Prime", "prime.jar");
+            cheerpjRunMain("Prime", "/webassembly-examples-eratosthenes/demos/java-cheerpj/prime.jar");
             prime = await cjResolveCall("Prime", "prime");
         }
         init();

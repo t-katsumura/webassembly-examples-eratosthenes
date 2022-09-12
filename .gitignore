@@ -17,6 +17,10 @@ go/*.wasm
 grain/node_modules
 grain/target
 
+# java
+java/*.class
+java/*.jar
+
 # python
 python/__pycache__
 

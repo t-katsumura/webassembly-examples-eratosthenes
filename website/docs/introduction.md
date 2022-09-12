@@ -12,27 +12,27 @@ Sample programs calculate the maximum prime below "N" given as an argument. Thos
 
 **WebAssembly Available**
 
--   [C](/category/c)
--   [C++](/category/c-1)
--   [Go](/category/go)
--   [Rust](/category/rust)
--   [JavaScript](/category/javascript)
--   [AssemblyScript](/category/assemblyscript)
+-   ✅[C](/category/c)
+-   ✅[C++](/category/c-1)
+-   ✅[Go](/category/go)
+-   ✅[Rust](/category/rust)
+-   ✅[JavaScript](/category/javascript)
+-   ✅[AssemblyScript](/category/assemblyscript)
+-   ⏳Elixir
+-   ⏳Java
+-   ⏳Grain
 
-**Future work**
+**Will not Work**
 
--   Elixir
--   Java
--   Julia
--   Grain
--   Motoko
+-   ❌Julia
+-   ❌Motoko
 
 **WebAssembly Unavailable**
 
-These languages cannot be compiled into WebAssembly.  
-But amazingly, there are some projects compiling interpreters or runtime to WebAssembly !
+These languages cannot be compiled into WebAssembly directory.  
+But amazingly, there are some projects compiling interpreters or runtime to WebAssembly which made these languages available on browsers.
 
--   Python
+-   [Python](https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/python)
 -   Perl
 -   Ruby
 -   PHP
@@ -50,6 +50,7 @@ Demos are available for
 -   [Go](pathname:///webassembly-examples-eratosthenes/demos/tinygo/) (Compiled with TinyGo)
 -   [Rust](pathname:///webassembly-examples-eratosthenes/demos/rust/)
 -   [AssemblyScript](pathname:///webassembly-examples-eratosthenes/demos/assemblyscript/)
+-   [Python](pathname:///webassembly-examples-eratosthenes/demos/python/) (Using pyodide WASM interpreter)
 -   [TypeScript](pathname:///webassembly-examples-eratosthenes/demos/typescript/) (Not WASM)
 -   [Raw JavaScript](pathname:///webassembly-examples-eratosthenes/demos/raw-javascript/) (Not WASM)
 
@@ -59,5 +60,5 @@ Reference implementation of the algorithm of Sieve of Eratosthenes is written in
 All other languages refers this code.
 
 ```python reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/python/prime.py#L6-L42
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/python/prime.py
 ```

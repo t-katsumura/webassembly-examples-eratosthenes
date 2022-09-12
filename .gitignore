@@ -17,6 +17,9 @@ go/*.wasm
 grain/node_modules
 grain/target
 
+# python
+python/__pycache__
+
 # rust
 rust/pkg
 rust/target

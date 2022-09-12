@@ -13,7 +13,6 @@
 Calculate max prime below "N" using the method of Sieve of Eratosthenes.
 Push "Run", then the table shows the max prime below "N" and the calculation time.
 Note if "N" is less than 2, the program returns 0 as max prime.
-    <div id="filesize" style="font-weight: 1000;"></div>
     </pre>
     <table border="1" align="center">
         <thead>
@@ -112,7 +111,7 @@ Note if "N" is less than 2, the program returns 0 as max prime.
     <script type="text/javascript">
         let prime;
         async function init() {
-            cheerpjInit();
+            cheerpjInit({disableLoadTimeReporting:true});
             cheerpjRunMain("Prime", "prime.jar");
             prime = await cjResolveCall("Prime", "prime");
         }

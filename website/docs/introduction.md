@@ -50,7 +50,6 @@ Demos are available for
 -   [Go](pathname:///webassembly-examples-eratosthenes/demos/tinygo/) (Compiled with TinyGo)
 -   [Rust](pathname:///webassembly-examples-eratosthenes/demos/rust/)
 -   [AssemblyScript](pathname:///webassembly-examples-eratosthenes/demos/assemblyscript/)
--   [Java](pathname:///webassembly-examples-eratosthenes/demos/java-cheerpj/) (Using CheerpJ WASM Java VM)
 -   [Python](pathname:///webassembly-examples-eratosthenes/demos/python/) (Using pyodide WASM interpreter)
 -   [TypeScript](pathname:///webassembly-examples-eratosthenes/demos/typescript/) (Not WASM)
 -   [Raw JavaScript](pathname:///webassembly-examples-eratosthenes/demos/raw-javascript/) (Not WASM)

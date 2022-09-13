@@ -1,9 +1,3 @@
----
-sidebar_position: 99
-title: Run Raw JavaScript
-slug: /run-raw-javascript
----
-
 # Run Raw JavaScript
 
 Raw JavaScript implementation of Sieve of Eratosthenes is contained in this repository to comapre the raw JavaScript and WebAssembly.

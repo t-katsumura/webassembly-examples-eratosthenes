@@ -15,6 +15,8 @@ if (document.title.includes("AssemblyScript")) {
     get_filesize("build/prime.wasm");
 } else if (document.title.includes("Rust")) {
     get_filesize("pkg/prime_bg.wasm");
+} else if (document.title.includes("Java JWebAssembly")) {
+    get_filesize("pkg/prime.wasm");
 } else {
     get_filesize("prime.wasm");
 }

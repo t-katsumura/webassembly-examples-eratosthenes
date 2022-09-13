@@ -3,16 +3,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Java WASM</title>
+    <title>Java JWebAssembly WASM</title>
+    <script type="text/javascript" src="../filesize.js"></script>
 </head>
 
 <body style="text-align: center; margin-left: auto; margin-right: auto">
     <h1>Calculate Max Prime in Java</h1>
-    <h3>This is using "CheerpJ" WebAssembly Java VM</h3>
     <pre>
 Calculate max prime below "N" using the method of Sieve of Eratosthenes.
 Push "Run", then the table shows the max prime below "N" and the calculation time.
 Note if "N" is less than 2, the program returns 0 as max prime.
+    <div id="filesize" style="font-weight: 1000;"></div>
     </pre>
     <table border="1" align="center">
         <thead>
@@ -106,14 +107,11 @@ Note if "N" is less than 2, the program returns 0 as max prime.
         </tbody>
     </table>
 
-    <!-- https://docs.leaningtech.com/cheerpj/Runtime-API -->
-    <script src="https://cjrtnc.leaningtech.com/2.3/loader.js"></script>
+    <script src="pkg/prime.wasm.js"></script>
     <script type="text/javascript">
-        let prime;
+        let mod;
         async function init() {
-            cheerpjInit({disableLoadTimeReporting:true});
-            cheerpjRunMain("Prime", "prime.jar");
-            prime = await cjResolveCall("Prime", "prime");
+            mod = await WebAssembly.compileStreaming(fetch("pkg/prime.wasm"));
         }
         init();
 
@@ -129,11 +127,10 @@ Note if "N" is less than 2, the program returns 0 as max prime.
             let startTime;
             let endTime;
 
-            // convert data type
-            num = Number(num);
+            let ins = await WebAssembly.instantiate(mod, wasmImports);
 
             startTime = performance.now();
-            maxPrime = await cjCall(prime, num);
+            maxPrime = ins.exports.prime(num);
             endTime = performance.now();
 
             primNode.textContent = maxPrime;

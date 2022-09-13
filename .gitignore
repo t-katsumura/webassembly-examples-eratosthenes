@@ -18,8 +18,10 @@ grain/node_modules
 grain/target
 
 # java
-java/*.class
-java/*.jar
+java-jwebassembly/.gradle
+java-jwebassembly/build
+java-cheerpj/*.class
+java-cheerpj/*.jar
 
 # python
 python/__pycache__

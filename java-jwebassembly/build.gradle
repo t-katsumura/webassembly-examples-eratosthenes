@@ -1,0 +1,47 @@
+// Use this block for specific version
+//////////////////////////////////////////////////////////
+/*
+plugins {
+    id 'java'
+    id "de.inetsoftware.jwebassembly" version "0.3"
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation 'de.inetsoftware:jwebassembly-api:0.3'
+}
+sourceCompatibility = 1.8
+archivesBaseName = 'prime'
+*/
+//////////////////////////////////////////////////////////
+
+
+// Use this block for snapshot
+buildscript {
+    repositories {
+        maven { url uri('https://jitpack.io') }
+    }
+    dependencies {
+        classpath 'com.github.i-net-software:jwebassembly-gradle:master-SNAPSHOT'
+    }
+}
+apply plugin: 'de.inetsoftware.jwebassembly'
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+dependencies {
+    implementation 'com.github.i-net-software:jwebassembly-api:master-SNAPSHOT'
+}
+
+// More information available
+// https://github.com/i-net-software/JWebAssembly/wiki/Build-with-Gradle
+// https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.AbstractArchiveTask.html
+
+wasm {
+    // compilerVersion = 0.3
+    compilerVersion = 'com.github.i-net-software:jwebassembly:master-SNAPSHOT'
+
+    archivesBaseName = 'prime'
+    destinationDir = file( './pkg' )
+}

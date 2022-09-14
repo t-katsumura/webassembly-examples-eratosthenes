@@ -19,12 +19,10 @@ grain/target
 
 # java
 java-bytecoder/.gradle
-java-bytecoder/bin
 java-bytecoder/build
 java-bytecoder/*.jar
 java-bytecoder/pkg
 java-jwebassembly/.gradle
-java-jwebassembly/bin
 java-jwebassembly/build
 java-jwebassembly/pkg
 java-cheerpj/*.class

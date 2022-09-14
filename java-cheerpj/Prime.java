@@ -1,5 +1,6 @@
-// javac Prime.java
-// jar cvf prime.jar Prime.class
+// build with these commands for browsers
+// $ javac Prime.java
+// $ jar cvf prime.jar Prime.class
 
 import java.util.Arrays;
 

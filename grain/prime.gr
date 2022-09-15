@@ -1,0 +1,56 @@
+// build for browsers https://github.com/grain-lang/grain/blob/stdlib-v0.5.3/js-runner/README.md
+// currently I could not call this function directly from JavaScript and get returned value on a browser (I believe there is some way)
+// $ grain compile prime.gr -o prime.wasm –release –no-gc
+
+import Number from "number"
+import Array from "array"
+
+export let prime = n => {
+
+  // n is required to be grater than 2
+  if (n == 2) {
+    n
+  } else if (n < 2) {
+    0
+  } else {
+    // length of sieve array
+    let nn = Number.floor((n - 1) / 2)
+
+    // max value to divide
+    let n_max = Number.floor(Number.sqrt(n))
+
+    // sieve array correspond to [3, 5, 7, 9, ..., ]
+    let mut arr = Array.make(nn, true)
+
+    let mut x = 0
+    let mut y = 0
+    for (let mut i = 0; i < nn; i += 1) {
+      x = 2 * (i + 1) + 1
+
+      // no need to check the value grater than sqrt(n)
+      if (x > n_max) {
+        break
+      }
+
+      for (let mut j = i + 1; j < nn; j += 1) {
+        if (!Array.get(j, arr)) {
+          continue
+        }
+        y = 2 * (j + 1) + 1
+        if (y % x == 0) {
+          Array.set(j, false, arr)
+        }
+      }
+    }
+
+    // check max prime below n
+    let mut max_val = 2
+    for (i = nn - 1; i >= 0; i -= 1) {
+      if (Array.get(i, arr)) {
+        max_val = 2 * (i + 1) + 1
+        break
+      }
+    }
+    max_val
+  }
+}

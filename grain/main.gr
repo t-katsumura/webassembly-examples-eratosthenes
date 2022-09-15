@@ -1,0 +1,53 @@
+// compile and run grain (--no-link is required as described at https://grain-lang.org/docs/tooling/grain_cli#grain-run)
+// $ grain main.gr -o main.wasm –release –no-gc --no-link -- 10000
+
+// build for standalone
+// $ grain compile main.gr -o main.wasm –release –no-gc
+// main.wasm can be run with "frain run" command (or with other WebAssembly runtimes)
+// do not set invoke function in command line argument when running with other WebAssembly rutimes
+// $ grain run main.wasm -- 10000
+
+import Number from "number"
+import Array from "array"
+import Process from "sys/process"
+import Result from "result"
+import Time from "sys/time"
+import Int64 from "int64"
+import String from "string"
+
+import Prime from "./prime"
+
+if (Result.isOk(Process.argv())) {
+
+  let args = Result.unwrap(Process.argv())
+
+  if (Array.length(args) < 2) {
+    print("no arguments found")
+  } else {
+
+    let n_str = Array.get(Array.length(args) - 1, args)
+
+    if (Result.isOk(Number.parseInt(n_str, 10))) {
+
+      let n = Result.unwrap(Number.parseInt(n_str, 10))
+
+      let start_time = Time.realTime()
+      let max_prime = Prime.prime(n)
+      let end_time = Time.realTime()
+
+      let mut duration = Int64.sub(
+        Result.unwrap(end_time),
+        Result.unwrap(start_time)
+      )
+      duration = Int64.div(duration, 1000000L)
+
+      print(String.concat("given number = ", toString(n)))
+      print(String.concat("max prime = ", toString(max_prime)))
+      print(String.concat("duration [ms] =", toString(duration)))
+    } else {
+      print("error on parsing arguments")
+    }
+  }
+} else {
+  print("error on checking arguments")
+}

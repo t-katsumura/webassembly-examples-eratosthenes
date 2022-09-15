@@ -14,8 +14,12 @@ cpp/*.wasm
 go/*.wasm
 
 # grain
+grain/*
+!grain/main.gr
+!grain/prime.gr
 grain/node_modules
 grain/target
+grain/*.wasm
 
 # java
 java-bytecoder/.gradle

@@ -21,11 +21,15 @@ grain/node_modules
 grain/target
 grain/*.wasm
 
-# java
+# java-bytecoder
+# very hard to call function from js
+java-bytecoder/*
 java-bytecoder/.gradle
 java-bytecoder/build
 java-bytecoder/*.jar
 java-bytecoder/pkg
+
+# java
 java-jwebassembly/.gradle
 java-jwebassembly/build
 java-jwebassembly/pkg

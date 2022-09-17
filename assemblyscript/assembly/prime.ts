@@ -12,17 +12,17 @@ export function prime(n: i32): i32 {
     }
 
     // length of sieve array
-    let N: i32 = NativeMathf.floor(f32((n - 1) / 2)) as i32;
+    let N = (n - 1) / 2;
 
     // max value to divide
-    let Nmax: i32 = NativeMathf.floor(NativeMathf.sqrt(f32(n))) as i32;
+    let Nmax = Mathf.floor(Mathf.sqrt(n as f32)) as u32;
 
     // sieve array correspond to [3, 5, 7, 9, ..., ]
-    let arr = new StaticArray<bool>(N);
-    arr.fill(true);
+    let arr = new StaticArray<bool>(N).fill(true);
 
-    let x: i32;
-    let y: i32;
+    let x: u32;
+    let y: u32;
+
     for (let i = 0; i < N; i++) {
         x = 2 * (i + 1) + 1;
 
@@ -32,12 +32,12 @@ export function prime(n: i32): i32 {
         }
 
         for (let j = i + 1; j < N; j++) {
-            if (!arr[j]) {
+            if (!unchecked(arr[j])) {
                 continue;
             }
             y = 2 * (j + 1) + 1;
             if (y % x == 0) {
-                arr[j] = false;
+                unchecked(arr[j] = false);
             }
         }
     }
@@ -45,7 +45,7 @@ export function prime(n: i32): i32 {
     // check max prime below n
     let max_val: i32 = 2;
     for (let i = N - 1; i >= 0; i--) {
-        if (arr[i]) {
+        if (unchecked(arr[i])) {
             max_val = 2 * (i + 1) + 1;
             break;
         }

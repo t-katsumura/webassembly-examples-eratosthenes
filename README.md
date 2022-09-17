@@ -18,13 +18,15 @@ How to compile or how to run the samples are briefly described there.
 ## Demos
 
 Demos are available for these languages.  
-To compare WebAssembly and JavaScript, there are also demos of JavaScript and TypeScript (transpiled to JavaScript)
+To compare WebAssembly and JavaScript, there are also demos of JavaScript and TypeScript
 
-- [C](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/c/)
-- [C++](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/cpp/)
+- [C (Compiled with emcc)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/c/)
+- [C++ (Compiled with em++)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/cpp/)
 - [Go (Compiled with Go)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/go/)
 - [Go (Compiled with TinyGo)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/tinygo/)
-- [Rust](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/rust/)
-- [AssemblyScript](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/assemblyscript/)
+- [Rust (Compiled with wasm-pack)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/rust/)
+- [AssemblyScript (Compiled with asc)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/assemblyscript/)
+- [Java (Compiled with JWebAssembly)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/java-jwebassembly//)
+- [Python (Using pyodide WASM interpreter)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/python/)
 - [TypeScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/typescript/)
 - [JavaScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/raw-javascript/)

@@ -18,19 +18,16 @@ Sample programs calculate the maximum prime below "N" given as an argument. Thos
 -   ✅ [**Rust**](/category/rust)
 -   ✅ [**JavaScript**](/category/javascript)
 -   ✅ [**AssemblyScript**](/category/assemblyscript)
--   ✅ **Java** (preparing...)
--   ⏳ **Elixir**
--   ⏳ **Grain**
-
-**Will not Work**
-
+-   ✅ [**Java**](https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/java-jwebassembly)
+-   ✅ [**Grain**](https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/grain)
+-   ❌ **Elixir**
 -   ❌ **Julia**
 -   ❌ **Motoko**
 
 **WebAssembly Unavailable**
 
 These languages cannot be compiled into WebAssembly directory.  
-But amazingly, there are some projects compiling interpreters or runtime to WebAssembly which made these languages available on browsers.
+But amazingly, there are some projects compiling interpreters or runtime to WebAssembly which make these languages available on browsers.
 
 -   ✅ [**Python**](https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/python)
 -   **Perl**
@@ -39,8 +36,6 @@ But amazingly, there are some projects compiling interpreters or runtime to WebA
 -   **C#/.NET**
 
 ## Demos
-
-Demos are available for
 
 -   ✅ [**C**](pathname:///webassembly-examples-eratosthenes/demos/c/) (Compiled with emcc)
 -   ✅ [**C++**](pathname:///webassembly-examples-eratosthenes/demos/cpp/) (Compiled with em++)
@@ -55,8 +50,7 @@ Demos are available for
 
 ## Reference Implementation
 
-Reference implementation of the algorithm of Sieve of Eratosthenes is written in python.  
-All other languages refers this code.
+Reference implementation of the algorithm of Sieve of Eratosthenes is written in python.
 
 ```python reference
 https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/python/prime.py

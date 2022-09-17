@@ -19,14 +19,15 @@ extern "C" int prime(int n)
         return 0;
     }
 
-    // length of sieve array
+    // length of sieve array (ignore even number)
     int N = (int)((n - 1) / 2);
 
-    // max value to divide
-    int Nmax = (int)std::sqrt(n);
+    // max value to check division
+    int sqrtn = (int)std::sqrt(n);
 
     // sieve array correspond to [3, 5, 7, 9, ..., ]
-    std::vector<bool> vec(N, true);
+    bool *arr = new bool(N);
+    memset(arr, true, N);
 
     int x = 0;
     int y = 0;
@@ -35,22 +36,22 @@ extern "C" int prime(int n)
     {
         x = 2 * (i + 1) + 1;
 
-        // no need to check the value grater than sqrt(n)
-        if (x > Nmax)
+        // theoretically, no need to check the value grater than sqrt(n)
+        if (x > sqrtn)
         {
             break;
         }
 
         for (int j = i + 1; j < N; j++)
         {
-            if (!vec[j])
+            if (!arr[j])
             {
                 continue;
             }
             y = 2 * (j + 1) + 1;
             if (y % x == 0)
             {
-                vec[j] = false;
+                arr[j] = false;
             }
         }
     }
@@ -59,7 +60,7 @@ extern "C" int prime(int n)
     int max_val = 2;
     for (int i = N - 1; i >= 0; i--)
     {
-        if (vec[i])
+        if (arr[i])
         {
             max_val = 2 * (i + 1) + 1;
             break;

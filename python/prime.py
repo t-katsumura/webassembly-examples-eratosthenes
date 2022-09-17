@@ -11,8 +11,8 @@ def prime(n: int) -> int:
     # length of sieve array
     N = int((n-1)/2)
 
-    # max value to divide
-    Nmax = int(sqrt(n))
+    # max value to check division
+    sqrtn = int(sqrt(n))
 
     # sieve array correspond to [3, 5, 7, 9, ..., ]
     arr = [True] * N
@@ -20,8 +20,8 @@ def prime(n: int) -> int:
     for i in range(N):
         x = 2*(i+1) + 1
 
-        # no need to check the value grater than sqrt(n)
-        if x > Nmax:
+        # theoretically, no need to check the value grater than sqrt(n)
+        if x > sqrtn:
             break
 
         for j in range(i+1, N):

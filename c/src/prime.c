@@ -1,11 +1,13 @@
 // build for browsers
-// $ emcc src/prime.c -o prime.js -O3 -flto -sWASM=1 -sEXIT_RUNTIME=1 -sINVOKE_RUN=0 -sEXPORTED_FUNCTIONS=_prime -sMODULARIZE=1 
+// $ emcc src/prime.c -o prime.js -O3 -flto -sWASM=1 -sEXIT_RUNTIME=1 -sINVOKE_RUN=0 -sEXPORTED_FUNCTIONS=_prime -sMODULARIZE=1
 // build for standalone
 // $ emcc src/prime.c -o prime_standalone.wasm -O3 -flto -sWASM=1 -sEXPORTED_FUNCTIONS=_prime -sSTANDALONE_WASM=1 --no-entry
 
-#include <math.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
 int prime(int n)
 {
@@ -20,20 +22,16 @@ int prime(int n)
         return 0;
     }
 
-    // length of sieve array
+    // length of sieve array (exclude even number)
     int N = (int)((n - 1) / 2);
 
-    // max value to divide
-    int Nmax = (int)sqrt(n);
+    // max value to check division
+    int sqrtn = (int)sqrt(n);
 
     // sieve array correspond to [3, 5, 7, 9, ..., ]
-    // here, 0 = false, 1 = true
     bool *arr;
     arr = (bool *)malloc(N * sizeof(bool));
-    for (int i = 0; i < N; i++)
-    {
-        arr[i] = true;
-    }
+    memset(arr, true, N);
 
     int x = 0;
     int y = 0;
@@ -42,8 +40,8 @@ int prime(int n)
     {
         x = 2 * (i + 1) + 1;
 
-        // no need to check the value grater than sqrt(n)
-        if (x > Nmax)
+        // theoretically, no need to check the value grater than sqrt(n)
+        if (x > sqrtn)
         {
             break;
         }

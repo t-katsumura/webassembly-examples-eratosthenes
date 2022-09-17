@@ -1,7 +1,7 @@
 // buildfor browser
-// $ asc assembly/prime.ts --target release -Ospeed -o build/prime.wasm
+// $ asc assembly/prime.ts --target release -o build/prime.wasm
 // build for standalone
-// $ asc assembly/prime.ts --target release -Ospeed --use abort=assembly/prime/abort -o build/prime_standalone.wasm
+// $ asc assembly/prime.ts --target release --use abort=assembly/prime/abort -o build/prime_standalone.wasm
 
 export function prime(n: i32): i32 {
     // n is required to be grater than 2

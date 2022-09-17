@@ -30,3 +30,21 @@ To compare WebAssembly and JavaScript, there are also demos of JavaScript and Ty
 - [Python (Using pyodide WASM interpreter)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/python/)
 - [TypeScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/typescript/)
 - [JavaScript (Not WASM)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/raw-javascript/)
+
+## Contributing
+
+Any contributions are always be appreciated!
+
+1. Fork it
+1. Create feature branch (`git checkout -b <your branch name>`)
+1. Develop on the branch
+1. Commit your changes (`git commit -m "Added new feature"`)
+1. Push to the branch (`git push -u origin <your branch name>`)
+1. Create new Pull Request on Github
+
+Git pages are created using [docusaurus](https://docusaurus.io/).  
+When updating the pages,
+
+- change or add markdown in `website/docs/`
+- resources of demos are in `website/static/demos/`
+- run `npm run build` to generate static pages in `docs/`

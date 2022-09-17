@@ -9,7 +9,7 @@ sidebar_position: 1
 In AssemblyScript, the Sieve of Eratosthenes can be written as
 
 ```typescript reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/c/src/prime.c
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/assemblyscript/assembly/prime.ts
 ```
 
 ## Build for Test
@@ -18,7 +18,7 @@ Build AssemblyScript to JavaScript and WebAssembly.
 `asc` command is used here to build which is installed by [assemblyscript](https://github.com/AssemblyScript/assemblyscript).
 
 ```bash title="build with asc command"
-asc assembly/prime.ts --target release -Ospeed
+asc assembly/prime.ts --target release
 ```
 
 Or, you can use `npm` command.  

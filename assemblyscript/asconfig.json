@@ -11,11 +11,10 @@
       "outFile": "build/prime.wasm",
       "textFile": "build/prime.wat",
       "sourceMap": true,
-      "optimize": "speed",
       "optimizeLevel": 3,
       "shrinkLevel": 0,
       "converge": false,
-      "noAssert": false
+      "noAssert": true
     }
   },
   "options": {

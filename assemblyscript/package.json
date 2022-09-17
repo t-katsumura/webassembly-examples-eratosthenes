@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node tests",
     "asbuild:debug": "asc assembly/prime.ts --target debug",
-    "asbuild:release": "asc assembly/prime.ts --target release -Ospeed",
+    "asbuild:release": "asc assembly/prime.ts --target release",
     "asbuild": "npm run asbuild:debug && npm run asbuild:release",
     "start": "npx serve ."
   },

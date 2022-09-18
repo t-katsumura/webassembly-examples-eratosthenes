@@ -1,9 +1,10 @@
 function get_filesize(url) {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open("HEAD", url, true);
+    xhr.setRequestHeader("Cache-Control", "no-cache");
     xhr.onreadystatechange = function () {
-        if (this.readyState == this.DONE) {
-            size = parseInt(xhr.getResponseHeader("Content-Length"));
+        if (this.readyState == this.DONE && this.status == 200) {
+            size = parseInt(xhr.getResponseHeader("Content-Length"), 10);
             document.getElementById("filesize").textContent =
                 "prime.wasm is : " + size.toLocaleString() + " bytes";
         }

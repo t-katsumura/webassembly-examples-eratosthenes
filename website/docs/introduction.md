@@ -18,8 +18,8 @@ Sample programs calculate the maximum prime below "N" given as an argument. Thos
 -   ✅ [**Rust**](/category/rust)
 -   ✅ [**JavaScript**](/category/javascript)
 -   ✅ [**AssemblyScript**](/category/assemblyscript)
--   ✅ [**Java**](https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/java-jwebassembly)
--   ✅ [**Grain**](https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/grain)
+-   ⏳ [**Java**](https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/java-jwebassembly)
+-   ⏳ [**Grain**](https://github.com/t-katsumura/webassembly-examples-eratosthenes/tree/main/grain)
 -   ❌ **Elixir**
 -   ❌ **Julia**
 -   ❌ **Motoko**

@@ -38,7 +38,7 @@ Any contributions are always be appreciated!
 1. Fork it
 1. Create feature branch (`git checkout -b <your branch name>`)
 1. Develop on the branch
-1. Commit your changes (`git commit -m "Added new feature"`)
+1. Commit your changes (`git commit -m "<commit comment>"`)
 1. Push to the branch (`git push -u origin <your branch name>`)
 1. Create new Pull Request on Github
 

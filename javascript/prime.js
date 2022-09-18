@@ -6,11 +6,11 @@ function prime(n) {
         return 0;
     }
 
-    // length of sieve array
+    // length of sieve array (ignore even number)
     var N = Math.floor((n - 1) / 2);
 
     // max value to divide
-    var Nmax = Math.floor(Math.sqrt(n));
+    var sqrtn = Math.floor(Math.sqrt(n));
 
     // sieve array correspond to [3, 5, 7, 9, ..., ]
     var arr = Array(N);
@@ -22,8 +22,8 @@ function prime(n) {
     for (let i = 0; i < N; i++) {
         x = 2 * (i + 1) + 1;
 
-        // no need to check the value grater than sqrt(n)
-        if (x > Nmax) {
+        // theoretically, no need to check the value grater than sqrt(n)
+        if (x > sqrtn) {
             break;
         }
 

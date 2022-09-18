@@ -16,10 +16,10 @@ pub fn prime(n: usize) -> usize {
         return 0;
     }
 
-    // length of sieve array
+    // length of sieve array (ignore even number)
     let n_cap = (n - 1) / 2;
 
-    // max value to divide
+    // max value to check division
     let n_max = integer::sqrt(n);
 
     // sieve array correspond to [3, 5, 7, 9, ..., ]
@@ -31,7 +31,7 @@ pub fn prime(n: usize) -> usize {
     for i in 0..n_cap {
         x = 2 * (i + 1) + 1;
 
-        // no need to check the value grater than sqrt(n)
+        // theoretically, no need to check the value grater than sqrt(n)
         if x > n_max {
             break;
         }
@@ -47,6 +47,7 @@ pub fn prime(n: usize) -> usize {
         }
     }
 
+    // check max prime below n
     let mut max_value = 2;
     for i in (0..n_cap).rev() {
         if arr[i] {

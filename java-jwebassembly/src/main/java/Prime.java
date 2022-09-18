@@ -15,11 +15,11 @@ public class Prime {
             return 0;
         }
 
-        // length of sieve array
+        // length of sieve array (ignore even number)
         int N = (int) Math.floor((n - 1.0) / 2.0);
 
-        // max value to divide
-        int Nmax = (int) Math.floor(Math.sqrt(n));
+        // max value to check division
+        int sqrtn = (int) Math.floor(Math.sqrt(n));
 
         // sieve array correspond to [3, 5, 7, 9, ..., ]
         boolean[] arr = new boolean[N];
@@ -29,8 +29,8 @@ public class Prime {
         for (int i = 0; i < N; i++) {
             x = 2 * (i + 1) + 1;
 
-            // no need to check the value grater than sqrt(n)
-            if (x > Nmax) {
+            // theoretically, no need to check the value grater than sqrt(n)
+            if (x > sqrtn) {
                 break;
             }
 
@@ -54,20 +54,6 @@ public class Prime {
             }
         }
         return max_val;
-    }
-
-    @Export
-    public static int getPrime(String arg) {
-
-        int n;
-        try {
-            n = Integer.parseInt(arg);
-        } catch (Exception e) {
-            // System.out.println("failed to parse integer");
-            return 0;
-        }
-
-        return Prime.prime(n);
     }
 
     @Export

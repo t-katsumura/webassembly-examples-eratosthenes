@@ -17,11 +17,11 @@ func prime(n int) int {
 		return 0
 	}
 
-	// length of sieve array
+	// length of sieve array (ignore even number)
 	N := (n - 1) / 2
 
-	// max value to divide
-	Nmax := int(math.Sqrt(float64(n)))
+	// max value to check division
+	sqrtn := int(math.Sqrt(float64(n)))
 
 	// sieve array correspond to [3, 5, 7, 9, ..., ]
 	arr := make([]bool, N)
@@ -33,8 +33,8 @@ func prime(n int) int {
 	for i := 0; i < N; i++ {
 		x = 2*(i+1) + 1
 
-		// no need to check the value grater than sqrt(n)
-		if x > Nmax {
+		// theoretically, no need to check the value grater than sqrt(n)
+		if x > sqrtn {
 			break
 		}
 

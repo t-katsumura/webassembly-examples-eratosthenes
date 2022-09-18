@@ -8,7 +8,7 @@ def prime(n: int) -> int:
     elif n < 2:
         return 0
 
-    # length of sieve array
+    # length of sieve array (ignore even number)
     N = int((n-1)/2)
 
     # max value to check division

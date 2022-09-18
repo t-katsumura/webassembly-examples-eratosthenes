@@ -13,26 +13,26 @@ export let prime = n => {
   } else if (n < 2) {
     0
   } else {
-    // length of sieve array
-    let nn = Number.floor((n - 1) / 2)
+    // length of sieve array (ignore even number)
+    let n_cap = Number.floor((n - 1) / 2)
 
-    // max value to divide
-    let n_max = Number.floor(Number.sqrt(n))
+    // max value to check division
+    let sqrtn = Number.floor(Number.sqrt(n))
 
     // sieve array correspond to [3, 5, 7, 9, ..., ]
-    let mut arr = Array.make(nn, true)
+    let mut arr = Array.make(n_cap, true)
 
     let mut x = 0
     let mut y = 0
-    for (let mut i = 0; i < nn; i += 1) {
+    for (let mut i = 0; i < n_cap; i += 1) {
       x = 2 * (i + 1) + 1
 
-      // no need to check the value grater than sqrt(n)
-      if (x > n_max) {
+      // theoritically, no need to check the value grater than sqrt(n)
+      if (x > sqrtn) {
         break
       }
 
-      for (let mut j = i + 1; j < nn; j += 1) {
+      for (let mut j = i + 1; j < n_cap; j += 1) {
         if (!Array.get(j, arr)) {
           continue
         }
@@ -45,7 +45,7 @@ export let prime = n => {
 
     // check max prime below n
     let mut max_val = 2
-    for (i = nn - 1; i >= 0; i -= 1) {
+    for (i = n_cap - 1; i >= 0; i -= 1) {
       if (Array.get(i, arr)) {
         max_val = 2 * (i + 1) + 1
         break

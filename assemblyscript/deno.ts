@@ -1,4 +1,7 @@
-// wasm should be compiled for standalone
+// wasm should be compiled as standalone wasm
+// run this script with command
+// $ deno run --allow-read deno.ts -- 10000
+
 const wasmCode = await Deno.readFile("./build/prime_standalone.wasm");
 const wasmModule = new WebAssembly.Module(wasmCode);
 const wasmInstance = new WebAssembly.Instance(wasmModule);

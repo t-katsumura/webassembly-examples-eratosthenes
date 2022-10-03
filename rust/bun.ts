@@ -1,14 +1,15 @@
 // wasm should be compiled with wasm-pack
-// run the script with command
-// $ deno run --allow-read deno.ts -- 10000
+// run this script with command
+// $ bun run bun.ts -- 10000
 
-const wasmCode = await Deno.readFile("./pkg/prime_bg.wasm");
+import * as fs from "fs";
 
+const wasmCode = fs.readFileSync("./pkg/prime_bg.wasm");
 const wasmModule = new WebAssembly.Module(wasmCode);
 const wasmInstance = new WebAssembly.Instance(wasmModule);
 const prime = wasmInstance.exports.prime as CallableFunction;
 
-let n = +Deno.args[Deno.args.length - 1];
+let n = +Bun.argv[Bun.argv.length - 1];
 
 let startTime = performance.now();
 let maxPrime = prime(n);

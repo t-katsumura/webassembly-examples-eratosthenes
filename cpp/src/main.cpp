@@ -15,13 +15,13 @@ int main(int argc, char const *argv[])
     }
 
     int n = atoi(argv[1]);
-    printf("given number = %d\n", n);
+    std::cout << "given number = " << n << std::endl;
 
     // get start time
     auto start = std::chrono::steady_clock::now();
 
     // calculate prime
-    unsigned int result = prime(n);
+    int result = prime(n);
 
     // get end time
     auto end = std::chrono::steady_clock::now();

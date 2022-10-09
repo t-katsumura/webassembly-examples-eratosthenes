@@ -4,6 +4,7 @@
 // $ em++ src/prime.cpp -o prime_standalone.wasm -O3 -flto -sWASM=1 -sEXPORTED_FUNCTIONS=_prime -sSTANDALONE_WASM=1 --no-entry
 
 #include <cmath>
+#include <cstring>
 #include <vector>
 
 extern "C" int prime(int n)
@@ -26,8 +27,8 @@ extern "C" int prime(int n)
     int sqrtn = (int)std::sqrt(n);
 
     // sieve array correspond to [3, 5, 7, 9, ..., ]
-    bool *arr = new bool(N);
-    memset(arr, true, N);
+    bool *arr = new bool[N]();
+    std::memset(arr, true, N);
 
     int x = 0;
     int y = 0;

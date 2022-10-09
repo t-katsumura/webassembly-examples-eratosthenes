@@ -4,6 +4,7 @@
 package main
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -74,5 +75,13 @@ func prime(n int) int {
 /*
 func main() {
 	<-make(chan struct{}, 0)
+}
+*/
+
+// Uncomment this function when building WebAssembly for WAVM runtime
+/*
+//export print_prime
+func print_prime(n int) {
+	fmt.Println(prime(n))
 }
 */

@@ -19,7 +19,7 @@ No html or javascript file needed.
 
 ### wasmtime
 
-[wasmtime](https://wasmtime.dev/) is standalone runtime for webassembly.  
+[wasmtime](https://wasmtime.dev/) is standalone runtime for WebAssembly.  
 Executable file can be downloaded from [github releases](https://github.com/bytecodealliance/wasmtime/releases).
 
 Command line options can be found at [CLI Options for wasmtime](https://docs.wasmtime.dev/cli-options.html).
@@ -39,7 +39,7 @@ duration [ms] = 989
 
 ### wasmer
 
-[wasmer](https://wasmer.io/) is also favorite standalone runtime for webassembly.
+[wasmer](https://wasmer.io/) is also famous standalone runtime for WebAssembly.
 
 Command line options can be found at [CLI Usage](https://docs.wasmer.io/ecosystem/wasmer/usage).
 Executable files can be downloaded at [github releases](https://github.com/wasmerio/wasmer/releases).  

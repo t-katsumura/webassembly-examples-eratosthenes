@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Write
 
-In Rust, the Sieve of Eratosthenes can be written as
+In Rust, [**Sieve of Eratosthenes**](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) can be written as
 
 ```rust reference
 https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/rust/src/prime.rs

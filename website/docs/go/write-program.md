@@ -6,27 +6,28 @@ sidebar_position: 1
 
 ## Write
 
-In Go, the Sieve of Eratosthenes can be written as
+In Go, [**Sieve of Eratosthenes**](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) can be written as
 
 ```go reference
-https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/pkg/prime.go#L12-L62
+https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/go/src/prime.go#L4-L63
 ```
 
 ## Build for Test
 
-Build Go program to executable file.
-This commands generate `main.exe`.
+Build Go program to executable file.  
+This command generates `main.exe`.
 
 ```bash title="build with go"
 go build -tags=release -ldflags="-s -w" src/main.go src/prime.go
 ```
 
 Here, `-tags=release` and `-ldflags` are for optimizing.  
-Go command line arguments can be found at [here](https://pkg.go.dev/cmd/go).
+Go command line options can be found at [here](https://pkg.go.dev/cmd/go).
 
 ## Run and Test
 
-now, run the executable file.
+Now, run the executable file.  
+And, invoke and test the function.
 
 ```bash title="invoke main function"
 main.exe 100000

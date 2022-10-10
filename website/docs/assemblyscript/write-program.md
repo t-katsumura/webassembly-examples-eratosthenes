@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Write
 
-In AssemblyScript, the Sieve of Eratosthenes can be written as
+In AssemblyScript, [**Sieve of Eratosthenes**](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) can be written as
 
 ```typescript reference
 https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/assemblyscript/assembly/prime.ts
@@ -14,25 +14,30 @@ https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/assem
 
 ## Build for Test
 
-Build AssemblyScript to JavaScript and WebAssembly.  
+Build AssemblyScript to 'Glue JavaScript' and WebAssembly.  
 `asc` command is used here to build which is installed by [assemblyscript](https://github.com/AssemblyScript/assemblyscript).
 
 ```bash title="build with asc command"
 asc assembly/prime.ts --target release
 ```
 
-Or, you can use `npm` command.  
-`asbuild:release` wchich runs the same command above is defined in `package.json`.
+Other asc command options can be found at [Using the compiler](https://www.assemblyscript.org/compiler.html).
+
+Or, you can use `npm`.  
+`asbuild:release` which runs the same command above defined in `package.json`.
 
 ```bash title="build with npm command"
 npm run asbuild:release
 ```
 
-asc command options can be found at [Using the compiler](https://www.assemblyscript.org/compiler.html).
+This generates glue JavaScript and wasm.
+
+- prime.wasm
+- prime.js
 
 ## Run and Test
 
-Now, run the test codes written in `tests/index.js`.
+Now, run the test written in `tests/index.js`.
 
 ```bash title="run tests"
 node tests
@@ -44,7 +49,7 @@ or, alternatively
 npm run test
 ```
 
-Output would be
+The test would show 
 
 ```bash title="output"
 (Use `node --trace-warnings ...` to show where the warning was created)

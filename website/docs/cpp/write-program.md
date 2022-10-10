@@ -6,12 +6,15 @@ sidebar_position: 1
 
 ## Write
 
-In C++, the Sieve of Eratosthenes can be written as
+In C++, [**Sieve of Eratosthenes**](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) can be written as
 
 ```cpp reference
 https://github.com/t-katsumura/webassembly-examples-eratosthenes/blob/main/cpp/src/prime.cpp
 ```
-`extern "C"` is required.
+
+:::caution
+`extern "C"` is required here.
+:::
 
 ## Build for Test
 
@@ -22,7 +25,7 @@ Build C++ program to executable file `main.exe`.
 g++ src/main.cpp src/prime.cpp -O3 -o main
 ```
 
-g++ command line arguments can be found at [3 GCC Command Options](https://gcc.gnu.org/onlinedocs/gcc/Invoking-GCC.html#Invoking-GCC).
+g++ command line options can be found at [3 GCC Command Options](https://gcc.gnu.org/onlinedocs/gcc/Invoking-GCC.html#Invoking-GCC).
 
 ## Run and Test
 
@@ -31,6 +34,8 @@ Now, lets's run `main.exe` and test the function.
 ```bash title="invoke main function"
 main.exe 100000
 ```
+
+This shows
 
 ```bash title="output"
 given number = 100000

@@ -1,49 +1,19 @@
 ---
-sidebar_position: 100
-title: Run WebAssembly
-slug: /run-webassembly
+sidebar_position: 2
 ---
 
-# Run WebAssembly
-
-## Run on Browser
-
-Now, let's run wasm on browser.  
-First, confirm that these files are exist in the working directory.
-
--   **index.html** : sample html calling prime.wasm
--   **prime.wasm** : wasm built for browsers
--   **prime.js** : glue javascript program
-
-Second, run a http server.  
-Opening the index.html without running a server may not work because of the CORS policy of the browsers.
-
-When using python, this command starts a http server.
-
-```bash title="Run a http server at port 8000"
-python -m http.server 8000
-```
-
-Third, access to the server from your browser.  
-Then the page of sample index.html is shown and primes can be calculated by clicking `Run` buttons.
-
-![run-wasm-on-browser.png](./img/run-wasm-on-browser.png)
-
-Many browsers support opening the wasm file in developer tools.  
-This is an example of google chrome.
-
-![run-wasm-on-browser-devtool.png](./img/run-wasm-on-browser-devtool.png)
-
-## Run Standalone
+# Run Standalone
 
 Now, let's run wasm standalone.  
 Before to run, prepare wasm program built for standalone.
 
--   **prime-standalone.wasm** : wasm file built for standalone
+-   **prime_standalone.wasm** : wasm file built for standalone
 
 or
 
--   **print_prime-standalone.wasm** : wasm file built for standalone (this is made for `wavm` runtime)
+-   **print_prime_standalone.wasm** : wasm file built for standalone (this is mainly made for `wavm` runtime)
+
+File name may differs depending on the languages.
 
 ### wasmtime
 
@@ -130,6 +100,46 @@ deno run --allow-read deno.ts -- 10000
 given number = 10000
 max prime = 9973
 duration [ms] = 2.00
+```
+
+### Bun
+
+[Bun](https://bun.sh/) is a fast JavaScript runtime tha can also run WebAssembly.  
+Executable files can be downloaded at [github releases](https://github.com/oven-sh/bun/releases).
+
+First, like deno, we need to write a typescript to call functions.
+
+```typescript title="Bun.ts"
+import * as fs from "fs";
+
+const wasmCode = fs.readFileSync("./prime_standalone.wasm");
+const wasmModule = new WebAssembly.Module(wasmCode);
+const wasmInstance = new WebAssembly.Instance(wasmModule);
+const prime = wasmInstance.exports.prime as CallableFunction;
+
+let n = +Bun.argv[Bun.argv.length - 1];
+
+let startTime = performance.now();
+let maxPrime = prime(n);
+let endTime = performance.now();
+
+console.log("given number =", n);
+console.log("max prime =", maxPrime);
+console.log("duration [ms] =", (endTime - startTime).toFixed(2));
+```
+
+Then run the script with the command
+
+```bash title="invoke prime function with Deno"
+bun run bun.ts -- 10000
+```
+
+The output will be
+
+```bash title="output"
+given number = 10000
+max prime = 9973
+duration [ms] = 9.29
 ```
 
 ### wasmi

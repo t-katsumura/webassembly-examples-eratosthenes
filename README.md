@@ -3,12 +3,8 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![Github pages available](https://img.shields.io/badge/Github-Pages-brightgreen.svg)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/)
 
-> **Note**  
-> **This project is just in progress.**  
-> **Breaking changes will be made sometimes.**
-
-This repository provides some examples of WebAssembly implementation compiled from other languages.  
-Sample programs implement the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) and calculate max prime below "N" which is given by argument.
+This repository provides some examples of WebAssembly implementation compiled from various languages.  
+Samples implement the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) and calculate max prime below given "N".
 
 ## Run samples
 
@@ -18,7 +14,7 @@ How to compile or how to run the samples are briefly described there.
 ## Demos
 
 Demos are available for these languages.  
-To compare WebAssembly and JavaScript, there are also demos of JavaScript and TypeScript
+To compare WebAssembly and JavaScript, there are also demos of JavaScript and TypeScript.
 
 - [C (Compiled with emcc)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/c/)
 - [C++ (Compiled with em++)](https://t-katsumura.github.io/webassembly-examples-eratosthenes/demos/cpp/)

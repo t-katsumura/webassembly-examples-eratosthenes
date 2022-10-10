@@ -5,12 +5,12 @@
 
 This repository provides some examples and benchmarks of WebAssembly implementation compiled from various languages. 
 Note that WebAssembly is not always faster than JavaScript. It depends on the tasks.   
-Samples implement the [**Sieve of Eratosthenes**](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) which algorithm is old but very simple and **calculate the max prime below given "N"**.
+Examples implement the [**Sieve of Eratosthenes**](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) which algorithm is old but very simple and **calculate the max prime below given "N"**.
 
-## Run samples
+## Run examples
 
 Check my git-pages (https://t-katsumura.github.io/webassembly-examples-eratosthenes/).  
-How to compile or how to run the samples are briefly described there.
+How to compile or how to run the examples are briefly described there.
 
 ## Demos
 

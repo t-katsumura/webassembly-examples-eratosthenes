@@ -5,6 +5,7 @@
 import * as fs from "fs";
 
 const wasmCode = fs.readFileSync("./pkg/prime_bg.wasm");
+// const wasmCode = fs.readFileSync("./target/wasm32-unknown-unknown/release/prime_standalone.wasm");
 const wasmModule = new WebAssembly.Module(wasmCode);
 const wasmInstance = new WebAssembly.Instance(wasmModule);
 const prime = wasmInstance.exports.prime as CallableFunction;

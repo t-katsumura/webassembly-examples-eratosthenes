@@ -4,6 +4,9 @@
 
 const wasmCode = await Deno.readFile("./pkg/prime_bg.wasm");
 
+// this can be used alternatively
+// const wasmCode = await Deno.readFile("./target/wasm32-unknown-unknown/release/prime_standalone.wasm");
+
 const wasmModule = new WebAssembly.Module(wasmCode);
 const wasmInstance = new WebAssembly.Instance(wasmModule);
 const prime = wasmInstance.exports.prime as CallableFunction;

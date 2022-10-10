@@ -15,5 +15,5 @@ title: Run WASM
   - [bun](/run-wasm/standalone#bun)
 - Use `prime_standalone.wasm` build with `--disable bulk-memory` option
   - [wasmi](/run-wasm/standalone#wasmi)
-- May not work on
+- Not supported in this example
   - [WAVM](/run-wasm/standalone#wavm)

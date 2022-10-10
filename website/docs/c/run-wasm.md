@@ -16,5 +16,4 @@ title: Run WASM
   - [wasmi](/run-wasm/standalone#wasmi)
 - Use `print_prime_standalone.wasm` 
   - [WAVM](/run-wasm/standalone#wavm)
-- May not work on
-  - N/A
+- Not supported in this example

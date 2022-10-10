@@ -24,5 +24,5 @@ title: Run WASM
 - Use `prime_standalone.wasm` targeted for wasm32-wasi
   - [wasmtime](/run-wasm/standalone#wasmtime)
   - [wasm3](/run-wasm/standalone#wasm3)
-- May not work on
-  - [WAVM](/run-wasm/standalone#wavm) (Works but nothing shown for this sample code)
+- Not supported in this example
+  - [WAVM](/run-wasm/standalone#wavm)

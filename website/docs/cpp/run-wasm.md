@@ -12,7 +12,7 @@ title: Run WASM
   - [wasm3](/run-wasm/standalone#wasm3)
   - [deno](/run-wasm/standalone#deno)
   - [bun](/run-wasm/standalone#bun)
-- May not work on
+- Not supported in this example
   - [wasmer](/run-wasm/standalone#wasmer)
   - [wasmi](/run-wasm/standalone#wasmi)
   - [WAVM](/run-wasm/standalone#wavm)
